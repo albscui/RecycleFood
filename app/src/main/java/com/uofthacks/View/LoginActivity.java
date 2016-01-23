@@ -1,5 +1,6 @@
 package com.uofthacks.View;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.facebook.CallbackManager;
 import com.facebook.login.widget.LoginButton;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.uofthacks.recyclefood.MainActivity;
 import com.uofthacks.recyclefood.R;
 
@@ -64,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
     private void onFacebookAccessTokenChange(AccessToken token) {
         if (token != null) {
             mAuthProgressDialog.show();
-            mFirebaseRef.authWithOAuthToken("facebook", token.getToken(), new Firebase.AuthResultHandler("facebook"));
+            mFirebaseRef.authWithOAuthToken("facebook", token.getToken(), new AuthResultHandler("facebook"));
         } else {
             // Logged out of Facebook and currently authenticated with Firebase using Facebook, so do a logout
             if (this.mAuthData != null && this.mAuthData.getProvider().equals("facebook")) {
@@ -81,11 +83,33 @@ public class LoginActivity extends AppCompatActivity {
             mAuthProgressDialog.show();
             if (provider.equals("twitter")) {
                 // if the provider is twitter, we pust pass in additional options, so use the options endpoint
-                mFirebaseRef.authWithOAuthToken(provider, options, new Firebase.AuthResultHandler(provider));
+                mFirebaseRef.authWithOAuthToken(provider, options, new AuthResultHandler(provider));
             } else {
                 // if the provider is not twitter, we just need to pass in the oauth_token
-                mFirebaseRef.authWithOAuthToken(provider, options.get("oauth_token"), new Firebase.AuthResultHandler(provider));
+                mFirebaseRef.authWithOAuthToken(provider, options.get("oauth_token"), new AuthResultHandler(provider));
             }
+        }
+    }
+
+    private class AuthResultHandler implements Firebase.AuthResultHandler {
+
+        private final String provider;
+
+        public AuthResultHandler(String provider) {
+            this.provider = provider;
+        }
+
+        @Override
+        public void onAuthenticated(AuthData authData) {
+            mAuthProgressDialog.hide();
+            Log.i(TAG, provider + " auth successful");
+            setAuthenticatedUser(authData);
+        }
+
+        @Override
+        public void onAuthenticationError(FirebaseError firebaseError) {
+            mAuthProgressDialog.hide();
+            showErrorDialog(firebaseError.toString());
         }
     }
 
@@ -118,4 +142,17 @@ public class LoginActivity extends AppCompatActivity {
         /* invalidate options menu to hide/show the logout button */
         supportInvalidateOptionsMenu();
     }
+
+    private void showErrorDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle("Error")
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+
+
 }
+
+
