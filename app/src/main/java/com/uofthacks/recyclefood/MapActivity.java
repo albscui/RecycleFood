@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapActivity extends Activity {
 
     GoogleMap map;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
