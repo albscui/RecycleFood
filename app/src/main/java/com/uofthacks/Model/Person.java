@@ -10,14 +10,24 @@ public class Person {
     private String address;
     private String cuisine;
     private Rating rating;
+    private double balance;
 
 
-    public Person(String firstName, String lastName, String address, String cusine, Rating rating){
+    public Person(String firstName, String lastName, String address, String cusine, Rating rating, double balance){
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.cuisine = cuisine;
         this.rating = rating;
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public String getFirstName() {
