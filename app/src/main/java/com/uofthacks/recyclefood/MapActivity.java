@@ -8,6 +8,7 @@ import android.support.v4.app.ActivityCompat;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -16,7 +17,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapActivity extends Activity {
 
     GoogleMap map;
-    
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,7 @@ public class MapActivity extends Activity {
         try {
             map = ((MapFragment) getFragmentManager().findFragmentById(
                     R.id.fragment1)).getMapAsync(map);
+
             MarkerOptions k = new MarkerOptions()
                     .position(new LatLng(28.573208, 77.206383))
                     .title("Current Location")
