@@ -9,6 +9,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+
+
 import com.facebook.appevents.AppEventsLogger;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -16,7 +21,7 @@ import com.firebase.client.FirebaseError;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private GoogleApiClient mGoogleApiClient = null;
     private Firebase mRef;
 
     @Override
@@ -24,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
-        
+
 
         mRef = new Firebase("https://luminous-fire-5527.firebaseio.com/");
         mRef.authWithOAuthToken("google", "<OAuth Token>", new Firebase.AuthResultHandler() {
@@ -37,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 // there was an error
             }
         });
+
+        //Create an instance of GoogleAPIClient
+        if(mGoogleApiClient == null){
+            mGoogleApiClient = new GoogleApiClient.Builder(this);
+                .addConnectCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+
+        }
 
     }
 
