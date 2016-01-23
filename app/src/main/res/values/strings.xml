@@ -4,4 +4,5 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="facebook_app_id">634220376715643</string>
 </resources>

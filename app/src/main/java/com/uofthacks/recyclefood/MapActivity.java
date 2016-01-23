@@ -8,7 +8,6 @@ import android.support.v4.app.ActivityCompat;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -17,11 +16,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapActivity extends Activity {
 
     GoogleMap map;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
 
         try {
             map = ((MapFragment) getFragmentManager().findFragmentById(
@@ -60,6 +60,7 @@ public class MapActivity extends Activity {
         } catch (Exception e){
             e.printStackTrace();
         }
+
     }
 
 }
