@@ -31,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     /* Used to track user logging in/out off Facebook */
     private AccessTokenTracker mFacebookAccessTokenTracker;
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+
 
     /* TextView that is used to display information about the logged in user */
     private TextView mLoggedInStatusTextView;
