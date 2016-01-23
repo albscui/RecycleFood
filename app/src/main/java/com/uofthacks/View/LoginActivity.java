@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.view.inputmethod.InputMethodManager;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -56,8 +57,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //Layout
-        RelativeLayout appLayout = new RelativeLayout(this);
 
         mFacebookCallbackManager = CallbackManager.Factory.create();
         mFacebookLoginButton = (LoginButton) findViewById(R.id.login_button);
@@ -69,24 +68,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        //Username input
-        EditText username = new EditText(this);
+        //Username and password input softkeyboard
+        EditText username = (EditText) findViewById(R.id.username);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(username, InputMethodManager.SHOW_IMPLICIT);
 
-        username.setId(1); //reference widget ID 1
-
-        RelativeLayout.LayoutParams usernameDetails = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT
-        );
-
-
-        //add some rules
-        usernameDetails.addRule(RelativeLayout.ABOVE,R.id.login_button);
-        usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
-        usernameDetails.setMargins(0,0,0,50);
-
-        //add to view
-        appLayout.addView(username,usernameDetails);
 
     }
 
