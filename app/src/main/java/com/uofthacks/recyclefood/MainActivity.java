@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.facebook.appevents.AppEventsLogger;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -35,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
                 // there was an error
             }
         });
+
+    }
+
+    protected void onResume() {
+        super.onResume();
+        AppEventsLogger.activateApp(this);
 
     }
 
