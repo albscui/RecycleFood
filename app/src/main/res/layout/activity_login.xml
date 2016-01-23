@@ -8,23 +8,16 @@
     android:background="@drawable/background">
     tools:context="com.uofthacks.View.LoginActivity">
 
+
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="35dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="88dp" />
+        android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:scaleType="centerInside" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -33,5 +26,28 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/username"
+        android:hint="@string/username"
+        android:layout_marginBottom="117dp"
+        android:layout_above="@+id/login_button"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password"
+        android:hint="@string/password"
+        android:layout_alignTop="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp" />
+
 
 </RelativeLayout>

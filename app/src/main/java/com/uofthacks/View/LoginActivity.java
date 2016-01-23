@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.EditText;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -54,6 +56,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Layout
+        RelativeLayout appLayout = new RelativeLayout(this);
+
         mFacebookCallbackManager = CallbackManager.Factory.create();
         mFacebookLoginButton = (LoginButton) findViewById(R.id.login_button);
         mFacebookAccessTokenTracker = new AccessTokenTracker() {
@@ -63,6 +68,26 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.onFacebookAccessTokenChange(currentAccessToken);
             }
         };
+
+        //Username input
+        EditText username = new EditText(this);
+
+        username.setId(1); //reference widget ID 1
+
+        RelativeLayout.LayoutParams usernameDetails = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+
+
+        //add some rules
+        usernameDetails.addRule(RelativeLayout.ABOVE,R.id.login_button);
+        usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        usernameDetails.setMargins(0,0,0,50);
+
+        //add to view
+        appLayout.addView(username,usernameDetails);
+
     }
 
     private void onFacebookAccessTokenChange(AccessToken token) {
