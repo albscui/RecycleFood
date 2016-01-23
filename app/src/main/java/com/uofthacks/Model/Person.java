@@ -12,6 +12,7 @@ public class Person {
     private Rating rating;
     private double balance;
 
+    public Person(){};
 
     public Person(String firstName, String lastName, String address, String cusine, Rating rating, double balance){
         this.firstName = firstName;
