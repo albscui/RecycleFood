@@ -57,8 +57,8 @@ public class MapActivity extends Activity {
                         return;
                     }
                     map.setMyLocationEnabled(true);
-                    map.getUiSettings().setZoomControlsEnabled(false);
-                    map.getUiSettings().setZoomGesturesEnabled(false);
+                    map.getUiSettings().setZoomControlsEnabled(true);
+                    map.getUiSettings().setZoomGesturesEnabled(true);
                     map.getUiSettings().setCompassEnabled(true);
                     map.getUiSettings().setMyLocationButtonEnabled(true);
                     map.getUiSettings().setRotateGesturesEnabled(true);
