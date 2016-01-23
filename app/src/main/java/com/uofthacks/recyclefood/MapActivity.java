@@ -25,7 +25,7 @@ public class MapActivity extends Activity {
 
         try {
             map = ((MapFragment) getFragmentManager().findFragmentById(
-                    R.id.fragment1)).getMap();
+                    R.id.fragment1)).getMapAsync(map);
             MarkerOptions k = new MarkerOptions()
                     .position(new LatLng(28.573208, 77.206383))
                     .title("Current Location")
