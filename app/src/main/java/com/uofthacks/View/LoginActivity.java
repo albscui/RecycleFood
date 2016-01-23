@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.EditText;
+import android.view.inputmethod.InputMethodManager;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -31,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
     /* Used to track user logging in/out off Facebook */
     private AccessTokenTracker mFacebookAccessTokenTracker;
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+
 
     /* TextView that is used to display information about the logged in user */
     private TextView mLoggedInStatusTextView;
@@ -52,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         mFacebookCallbackManager = CallbackManager.Factory.create();
         mFacebookLoginButton = (LoginButton) findViewById(R.id.login_button);
         mFacebookAccessTokenTracker = new AccessTokenTracker() {
@@ -61,6 +67,13 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.onFacebookAccessTokenChange(currentAccessToken);
             }
         };
+
+        //Username and password input softkeyboard
+        EditText username = (EditText) findViewById(R.id.username);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(username, InputMethodManager.SHOW_IMPLICIT);
+
+
     }
 
     private void onFacebookAccessTokenChange(AccessToken token) {
