@@ -1,5 +1,6 @@
 package com.uofthacks.recyclefood;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,10 +19,12 @@ import com.facebook.appevents.AppEventsLogger;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.google.android.gms.location.LocationServices;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GoogleApiClient mGoogleApiClient = null;
+    private GoogleApiClient mGoogleApiClient;
+    private Location mLastLocation;
     private Firebase mRef;
 
     @Override
