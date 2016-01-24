@@ -1,8 +1,11 @@
 package com.uofthacks.View;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +23,7 @@ import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.uofthacks.recyclefood.MainActivity;
+import com.uofthacks.recyclefood.MapActivity;
 import com.uofthacks.recyclefood.R;
 
 import java.util.Map;
@@ -166,6 +170,10 @@ public class LoginActivity extends AppCompatActivity {
                 .show();
     }
 
+    public void testMap(View view) {
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
 
 }
 
