@@ -6,4 +6,5 @@
     <string name="title_activity_map">MapActivity</string>
     <string name="facebook_app_id">634220376715643</string>
     <string name="title_activity_main_screen">MainScreen</string>
+    <string name="or">– or –</string>
 </resources>

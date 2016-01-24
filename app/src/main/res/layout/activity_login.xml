@@ -36,7 +36,8 @@
         android:hint="@string/username"
         android:layout_marginBottom="117dp"
         android:layout_above="@+id/login_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -45,9 +46,33 @@
         android:ems="10"
         android:id="@+id/password"
         android:hint="@string/password"
-        android:layout_alignTop="@+id/username"
+        android:layout_marginTop="36dp"
+        android:background="@color/white"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignLeft="@+id/username"
+        android:layout_alignStart="@+id/username" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logo"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/or"
+        android:id="@+id/textView"
+        android:textColor="@color/grey"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp" />
+        android:layout_above="@+id/login_button"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false" />
 
 
 </RelativeLayout>
