@@ -74,8 +74,6 @@ public class LoginActivity extends AppCompatActivity {
         };
 
         //Logo
-
-
         //Username and password input softkeyboard
         EditText username = (EditText) findViewById(R.id.username);
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
