@@ -72,6 +72,8 @@
         android:layout_above="@+id/login_button"
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
         android:layout_alignParentTop="false" />
 
     <Button
