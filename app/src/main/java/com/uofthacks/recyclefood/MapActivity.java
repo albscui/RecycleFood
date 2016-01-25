@@ -26,7 +26,6 @@ public class MapActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-
         try {
             ( (MapFragment) getFragmentManager().findFragmentById(
                     R.id.map_fragment)).getMapAsync(new OnMapReadyCallback() {
