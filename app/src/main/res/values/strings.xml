@@ -7,4 +7,10 @@
     <string name="facebook_app_id">634220376715643</string>
     <string name="title_activity_main_screen">MainScreen</string>
     <string name="or">– or –</string>
+    <string name="editUserInfo">Edit User Info</string>
+    <string name="titleFirstName">First Name</string>
+    <string name="titleLastName">Last Name</string>
+    <string name="titleAddress">Address</string>
+    <string name="titleBalance">Balance</string>
+    <string name="titleRating">Rating</string>
 </resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#58e2e6"
+    android:backgroundTint="#7cd1ce"
+    android:clickable="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/editUserInfo"
+        android:id="@+id/editUserTitle_textVew"
+        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/titleLastName"
+        android:id="@+id/titleLastName"
+        android:layout_below="@+id/titleFirstName"
+        android:layout_alignLeft="@+id/titleFirstName"
+        android:layout_alignStart="@+id/titleFirstName"
+        android:layout_marginTop="29dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/titleFirstName"
+        android:id="@+id/titleFirstName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_below="@+id/editUserTitle_textVew" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/titleAddress"
+        android:id="@+id/titleAddress"
+        android:layout_below="@+id/titleLastName"
+        android:layout_alignLeft="@+id/titleLastName"
+        android:layout_alignStart="@+id/titleLastName"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/titleBalance"
+        android:id="@+id/titleBalance"
+        android:layout_below="@+id/titleAddress"
+        android:layout_alignLeft="@+id/titleAddress"
+        android:layout_alignStart="@+id/titleAddress"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/titleRating"
+        android:id="@+id/titleRating"
+        android:layout_below="@+id/titleBalance"
+        android:layout_alignLeft="@+id/titleBalance"
+        android:layout_alignStart="@+id/titleBalance"
+        android:layout_marginTop="44dp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editFirstName"
+        android:layout_below="@+id/editUserTitle_textVew"
+        android:layout_toRightOf="@+id/titleFirstName"
+        android:layout_toEndOf="@+id/titleFirstName"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editLastName"
+        android:layout_alignTop="@+id/titleLastName"
+        android:layout_alignLeft="@+id/editFirstName"
+        android:layout_alignStart="@+id/editFirstName" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editAddress"
+        android:layout_alignBottom="@+id/titleAddress"
+        android:layout_alignLeft="@+id/editLastName"
+        android:layout_alignStart="@+id/editLastName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Balance Text"
+        android:id="@+id/textBalance"
+        android:layout_alignBottom="@+id/titleBalance"
+        android:layout_alignLeft="@+id/editAddress"
+        android:layout_alignStart="@+id/editAddress" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Rating Text"
+        android:id="@+id/textRating"
+        android:layout_alignTop="@+id/titleRating"
+        android:layout_alignLeft="@+id/textBalance"
+        android:layout_alignStart="@+id/textBalance" />
+</RelativeLayout>
