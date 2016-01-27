@@ -22,6 +22,7 @@ import com.facebook.login.widget.LoginButton;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.uofthacks.recyclefood.EditPersonActivity;
 import com.uofthacks.recyclefood.MainActivity;
 import com.uofthacks.recyclefood.MapActivity;
 import com.uofthacks.recyclefood.R;
@@ -171,10 +172,17 @@ public class LoginActivity extends AppCompatActivity {
                 .show();
     }
 
+    //TEST METHODS
     public void testMap(View view) {
         Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
+
+    public void testEditPerson(View view){
+        Intent intent = new Intent(this, EditPersonActivity.class);
+        startActivity(intent);
+    }
+
 
 }
 

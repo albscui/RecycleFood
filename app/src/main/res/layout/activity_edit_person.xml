@@ -57,8 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/titleBalance"
-        android:id="@+id/titleBalance"
+        android:text="@string/titleAddBalance"
+        android:id="@+id/titleAddBalance"
         android:layout_below="@+id/titleAddress"
         android:layout_alignLeft="@+id/titleAddress"
         android:layout_alignStart="@+id/titleAddress"
@@ -70,10 +70,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/titleRating"
         android:id="@+id/titleRating"
-        android:layout_below="@+id/titleBalance"
-        android:layout_alignLeft="@+id/titleBalance"
-        android:layout_alignStart="@+id/titleBalance"
-        android:layout_marginTop="44dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/titleAddBalance"
+        android:layout_alignStart="@+id/titleAddBalance"
+        android:layout_marginBottom="120dp" />
 
     <EditText
         android:layout_width="150dp"
@@ -107,7 +107,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Balance Text"
         android:id="@+id/textBalance"
-        android:layout_alignBottom="@+id/titleBalance"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/textRating"
         android:layout_alignLeft="@+id/editAddress"
         android:layout_alignStart="@+id/editAddress" />
 
@@ -120,4 +121,43 @@
         android:layout_alignTop="@+id/titleRating"
         android:layout_alignLeft="@+id/textBalance"
         android:layout_alignStart="@+id/textBalance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Balance"
+        android:id="@+id/titleBalance"
+        android:layout_alignBottom="@+id/textBalance"
+        android:layout_alignLeft="@+id/titleRating"
+        android:layout_alignStart="@+id/titleRating" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editBalance"
+        android:layout_alignTop="@+id/titleAddBalance"
+        android:layout_alignLeft="@+id/editAddress"
+        android:layout_alignStart="@+id/editAddress" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/buttonSaveEditUser"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/editBalance"
+        android:layout_alignLeft="@+id/titleAddBalance"
+        android:layout_alignStart="@+id/titleAddBalance"
+        android:onClick="saveUserInfo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Test"
+        android:id="@+id/textTest"
+        android:layout_alignBottom="@+id/buttonSaveEditUser"
+        android:layout_toRightOf="@+id/editUserTitle_textVew"
+        android:layout_toEndOf="@+id/editUserTitle_textVew" />
 </RelativeLayout>

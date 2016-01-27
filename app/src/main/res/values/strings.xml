@@ -11,6 +11,6 @@
     <string name="titleFirstName">First Name</string>
     <string name="titleLastName">Last Name</string>
     <string name="titleAddress">Address</string>
-    <string name="titleBalance">Balance</string>
+    <string name="titleAddBalance">Add Balance</string>
     <string name="titleRating">Rating</string>
 </resources>

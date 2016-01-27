@@ -83,5 +83,15 @@
         android:onClick="testMap"
         android:text="Open Map" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test Edit Person"
+        android:id="@+id/testEditPerson"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:onClick="testEditPerson"
+        android:nestedScrollingEnabled="false" />
+
 
 </RelativeLayout>
